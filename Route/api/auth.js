@@ -1,11 +1,11 @@
 const express =  require('express');
 const _ = express.Router();
+const {signUpController} = require('../../Controller/SignupController')
+const {SigninController} = require ('../../Controller/SigninController')
 
-_.get('/registraiton' , async (req,res)=> {
-    res.status(200).json({
-        Message:"registraiton route ok"
-    })
-})
+
+_.post('/registraiton' ,signUpController);
+_.post('/login' ,SigninController);
 
 
 module.exports = _;
